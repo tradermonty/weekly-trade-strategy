@@ -68,22 +68,54 @@ weekly-trade-strategy/
 
 #### クイックスタート
 
-1. **チャート画像を準備** (推奨18枚)
+1. **チャート画像を準備** (推奨16枚)
 
 ```bash
 # 日付フォルダを作成
-mkdir -p charts/2025-11-03
+mkdir -p charts/2025-11-17
 
-# チャート画像を配置（以下の画像を推奨）
-# - VIX (週足)
-# - 米10年債利回り (週足)
-# - S&P 500 Breadth Index
-# - Nasdaq 100, S&P 500, Russell 2000, Dow (週足)
-# - 金、銅、原油、天然ガス、ウラン (週足)
-# - Uptrend Stock Ratio
-# - セクター・インダストリーパフォーマンス
-# - 決算カレンダー、ヒートマップ
+# チャート画像を配置
+# 画像形式: .jpeg または .png
+# ファイル名: 任意（説明的な名前を推奨）
 ```
+
+**推奨チャート一覧** (週足チャートを推奨):
+
+**ボラティリティ・金利** (2枚):
+- VIX (CBOE Volatility Index) - 週足
+- 米10年債利回り (US 10-Year Treasury Yield) - 週足
+
+**主要株価指数** (4枚):
+- Nasdaq 100 (週足)
+- S&P 500 (週足)
+- Russell 2000 (週足)
+- Dow Jones Industrial Average (週足)
+
+**コモディティ** (5枚):
+- 金先物 (Gold Futures) - 週足
+- 銅先物 (Copper Futures) - 週足
+- 原油 (WTI Crude Oil) - 週足
+- 天然ガス (Natural Gas) - 週足
+- ウランETF (URA) - 週足
+
+**セクター・マーケットブレス** (3枚):
+- セクターパフォーマンス (1週間) - FinViz等
+- セクターパフォーマンス (1ヶ月) - FinViz等
+- インダストリーパフォーマンス (1週間または1ヶ月)
+
+**その他** (2枚、オプション):
+- S&P 500 Breadth Index (200日MA + 8日MA) - 別途分析
+- Uptrend Stock Ratio (全市場) - 別途分析
+
+**チャート取得先の例**:
+- TradingView (https://www.tradingview.com/) - カスタマイズ可能な週足チャート
+- FinViz (https://finviz.com/) - セクター・インダストリーパフォーマンス
+- StockCharts (https://stockcharts.com/) - Breadth指標チャート
+
+**注意**:
+- すべて週足（Weekly）チャートを使用
+- 画像サイズ: 推奨 1200x800px 以上（読みやすさのため）
+- S&P 500 Breadth IndexとUptrend Ratioは別途breadth分析で使用（technical-market-analystではスキップ）
 
 2. **レポートフォルダを作成**
 
@@ -245,11 +277,37 @@ An AI agent system that automatically generates weekly trading strategy blog pos
 
 ### Quick Start
 
-1. Clone the repository
-2. Create `.env` file with your `FMP_API_KEY`
-3. Create date folders: `mkdir -p charts/2025-11-03 reports/2025-11-03`
-4. Place chart images in `charts/2025-11-03/`
-5. Run the complete workflow via Claude Code/Desktop (see Japanese section for detailed prompt)
+1. **Clone the repository**
+```bash
+git clone https://github.com/tradermonty/weekly-trade-strategy.git
+cd weekly-trade-strategy
+```
+
+2. **Create `.env` file with your FMP API key**
+```bash
+echo "FMP_API_KEY=your_api_key_here" > .env
+```
+
+3. **Prepare chart images** (Recommended: 16 charts)
+
+Create date folder and place weekly chart images:
+```bash
+mkdir -p charts/2025-11-17
+# Add your chart images (.jpeg or .png) to charts/2025-11-17/
+```
+
+**Recommended Charts** (Weekly timeframe):
+- **Volatility & Rates** (2): VIX, US 10-Year Treasury Yield
+- **Major Indices** (4): Nasdaq 100, S&P 500, Russell 2000, Dow Jones
+- **Commodities** (5): Gold, Copper, WTI Crude Oil, Natural Gas, Uranium ETF (URA)
+- **Sectors** (3): Sector Performance (1-week, 1-month), Industry Performance
+- **Breadth** (2, Optional): S&P 500 Breadth Index, Uptrend Stock Ratio
+
+**Chart Sources**: TradingView, FinViz, StockCharts
+
+4. **Run the complete workflow via Claude Code/Desktop**
+
+See the Japanese section above for detailed execution prompts and workflow.
 
 ### Project Structure
 
@@ -293,5 +351,4 @@ This project leverages Claude's advanced AI capabilities for financial market an
 - ✅ Improved allocation percentage clarity (75-80% risk assets vs 20-25% cash)
 - ✅ Standardized indicator levels (VIX: 17/20/23/26, 10Y: 4.11/4.36/4.50/4.60)
 - ✅ Price-based triggers for better usability by part-time traders
-- ✅ Successfully generated 2025-11-17 weekly strategy (352 lines, 2 review iterations)
 - ✅ Added Druckenmiller-style 18-month strategy report capability
