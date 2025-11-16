@@ -22,17 +22,14 @@
 
 ### 前提条件
 
-- **Claude Code CLI** または **Claude Desktop**
-- 以下のClaudeスキルが利用可能であること：
-  - `technical-analyst`
-  - `breadth-chart-analyst`
-  - `sector-analyst`
-  - `market-environment-analysis`
-  - `us-market-bubble-detector`
-  - `market-news-analyst`
-  - `economic-calendar-fetcher`
-  - `earnings-calendar`
-  - `stanley-druckenmiller-investment`（中長期戦略用）
+- **Claude Code CLI** (必須)
+  - このプロジェクトは`.claude/agents/`機能を使用するため、Claude Code専用です
+  - インストール: https://docs.claude.ai/claude-code
+- **FMP API** (オプション)
+  - 決算・経済カレンダー自動取得に使用
+  - 無料プラン: 250リクエスト/日
+
+**注意**: Claude Desktopでは`.claude/agents/`が利用できないため、このプロジェクトは動作しません。Claude Code CLIをご使用ください。
 
 ### セットアップ
 
@@ -147,7 +144,7 @@ mkdir -p charts/2025-11-17
 mkdir -p reports/2025-11-03
 ```
 
-3. **一括実行プロンプト** (Claude Code/Desktop で実行)
+3. **一括実行プロンプト** (Claude Codeで実行)
 
 ```
 2025-11-03週のトレード戦略ブログを作成してください。
@@ -290,17 +287,14 @@ An AI agent system that automatically generates weekly trading strategy blog pos
 
 ### Prerequisites
 
-- **Claude Code CLI** or **Claude Desktop**
-- The following Claude skills must be available:
-  - `technical-analyst`
-  - `breadth-chart-analyst`
-  - `sector-analyst`
-  - `market-environment-analysis`
-  - `us-market-bubble-detector`
-  - `market-news-analyst`
-  - `economic-calendar-fetcher`
-  - `earnings-calendar`
-  - `stanley-druckenmiller-investment` (for medium-term strategy)
+- **Claude Code CLI** (Required)
+  - This project uses `.claude/agents/` feature, which is exclusive to Claude Code
+  - Installation: https://docs.claude.ai/claude-code
+- **FMP API** (Optional)
+  - For automatic earnings and economic calendar retrieval
+  - Free plan: 250 requests/day
+
+**Note**: This project does not work with Claude Desktop as it does not support `.claude/agents/`. Please use Claude Code CLI.
 
 ### Quick Start
 
@@ -353,7 +347,7 @@ mkdir -p charts/2025-11-17
 
 **Chart Sources**: TradingView, FinViz, StockCharts
 
-4. **Run the complete workflow via Claude Code/Desktop**
+4. **Run the complete workflow via Claude Code**
 
 See the Japanese section above for detailed execution prompts and workflow.
 
