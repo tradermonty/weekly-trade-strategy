@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(technical-analyst)",
+      "Skill(breadth-chart-analyst)",
+      "Skill(sector-analyst)",
+      "Skill(market-environment-analysis)",
+      "Skill(us-market-bubble-detector)",
+      "Skill(market-news-analyst)",
+      "Skill(economic-calendar-fetcher)",
+      "Skill(earnings-calendar)",
+      "Skill(stanley-druckenmiller-investment)",
+      "Bash(mkdir:*)",
+      "Bash(python3:*)",
+      "WebSearch",
+      "WebFetch(domain:monty-trader.com)",
+      "WebFetch(domain:financialmodelingprep.com)",
+      "Bash(python fetch_economic_calendar.py:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git log:*)",
+      "Bash(echo $FMP_API_KEY)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

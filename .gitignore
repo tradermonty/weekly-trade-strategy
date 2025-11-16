@@ -21,7 +21,7 @@ ENV/
 
 # Claude Code settings (user-specific)
 .claude/settings.json
-.claude/settings.local.json
+# Note: settings.local.json is intentionally tracked for project-specific permissions
 
 # Data files (if they contain sensitive info)
 # earnings_data.json
